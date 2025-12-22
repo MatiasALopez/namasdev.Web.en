@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>namasdev.Web.en</id>
+    <version>1.0.0</version>
+    <title>namasdev Web (EN)</title>
+    <authors>Matias Alberto Lopez</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/MatiasALopez/namasdev.Web.en</projectUrl>
+    <description>namasdev Web library (English)</description>
+    <releaseNotes></releaseNotes>
+    <copyright>2025</copyright>
+    <tags>namasdev</tags>
+    <dependencies>
+      <dependency id="namasdev.Core.en" version="1.0.0" />
+    </dependencies>
+  </metadata>
+</package>
