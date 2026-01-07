@@ -24,15 +24,15 @@ namespace namasdev.Web.Helpers
                 .ToArray();
         }
 
-        public static SelectList ObtenerSiNoSelectList(
-            bool? valorSeleccionado = null)
+        public static SelectList GetYesNoSelectList(
+            bool? selectedValue = null)
         {
             return CreateSelectListFromItems(new List<SelectListItem>
                 {
                     new SelectListItem { Text = Formatter.YesNo(true), Value = true.ToString() },
                     new SelectListItem { Text = Formatter.YesNo(false), Value = false.ToString() },
                 },
-                valorSeleccionado?.ToString());
+                selectedValue?.ToString());
         }
 
         public static SelectList GetYearsUpToCurrentSelectList(int fromYear, int toYear)
