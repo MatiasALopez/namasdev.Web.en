@@ -60,7 +60,8 @@ namespace namasdev.Web.Helpers
         public static MvcHtmlString AlertSuccess(this HtmlHelper html, IEnumerable<string> messages,
             bool isDismissable = false)
         {
-            return Alert(html, AlertType.Success, 
+            return Alert(html, 
+                AlertType.Success, 
                 messages: messages?.ToArray(),
                 isDismissable: isDismissable);
         }
@@ -76,7 +77,8 @@ namespace namasdev.Web.Helpers
         public static MvcHtmlString AlertInfo(this HtmlHelper html, IEnumerable<string> messages,
             bool isDismissable = false)
         {
-            return Alert(html, AlertType.Info, 
+            return Alert(html, 
+                AlertType.Info, 
                 messages: messages?.ToArray(),
                 isDismissable: isDismissable);
         }
@@ -92,7 +94,8 @@ namespace namasdev.Web.Helpers
         public static MvcHtmlString AlertWarning(this HtmlHelper html, IEnumerable<string> messages,
             bool isDismissable = false)
         {
-            return html.Alert(AlertType.Warning, 
+            return Alert(html,
+                AlertType.Warning, 
                 messages: messages?.ToArray(),
                 isDismissable: isDismissable);
         }
@@ -108,7 +111,8 @@ namespace namasdev.Web.Helpers
         public static MvcHtmlString AlertDanger(this HtmlHelper html, IEnumerable<string> messages,
            bool isDismissable = false)
         {
-            return html.Alert(AlertType.Danger, 
+            return Alert(html,
+                AlertType.Danger, 
                 messages: messages?.ToArray(),
                 isDismissable: isDismissable);
         }
@@ -121,14 +125,14 @@ namespace namasdev.Web.Helpers
                 return new MvcHtmlString("");
             }
 
-            string alertCssClass = null, 
+            string alertCssClass = $"alert alert-{type.ToString().ToLower()}", 
                 dismissButton = null;
             if (isDismissable)
             {
-                alertCssClass = "alert-dismissible fade show";
+                alertCssClass += "alert-dismissible fade show";
                 dismissButton = "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>";
             }
-            return new MvcHtmlString($"<div class=\"alert alert-warning {alertCssClass}\" role=\"alert\">{html.Raw(Core.Types.Formatter.List(messages, "<br/>"))}{dismissButton}</div>");
+            return new MvcHtmlString($"<div class=\"{alertCssClass}\" role=\"alert\">{html.Raw(Core.Types.Formatter.List(messages, "<br/>"))}{dismissButton}</div>");
         }
     }
 }
