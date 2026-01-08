@@ -11,6 +11,20 @@ namespace namasdev.Web.Helpers
 {
     public class ListHelper
     {
+        public static SelectList GetRolesSelectList(IEnumerable<string> roles,
+            string selectedValue = null)
+        {
+            return CreateSelectListFromItems(
+                GetRolesSelectListItems(roles),
+                selectedValue: selectedValue);
+        }
+
+        public static SelectList GetRolesSelectListMultiple(IEnumerable<string> roles,
+            IEnumerable<string> selectedValues = null)
+        {
+            return CreateSelectListFromItems(GetRolesSelectListItems(roles, selectedValues));
+        }
+
         public static IEnumerable<SelectListItem> GetRolesSelectListItems(IEnumerable<string> roles,
             IEnumerable<string> selectedValues = null)
         {
