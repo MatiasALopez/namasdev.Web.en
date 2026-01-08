@@ -22,36 +22,24 @@ namespace namasdev.Web.Helpers
             _controller = controller;
         }
 
-        public void SetErrorMessages(params string[] messages)
+        public void SetMessageSuccess(params string[] messages)
         {
-            _controller.ViewBag.ErrorMessage = FormatMessages(messages);
+            ViewBagHelper.SetMessageSuccess(_controller.ViewBag, messages);
         }
 
-        public void SetOkMessage(string message)
+        public void SetMessageInfo(params string[] messages)
         {
-            _controller.ViewBag.OkMessage = FormatMessage(message);
+            ViewBagHelper.SetMessageInfo(_controller.ViewBag, messages);
         }
 
-        public void SetAlertMessage(string message)
+        public void SetMessageWarning(params string[] messages)
         {
-            _controller.ViewBag.AlertMessage = FormatMessage(message);
+            ViewBagHelper.SetMessageWarning(_controller.ViewBag, messages);
         }
 
-        public void SetInfoMessage(string message)
+        public void SetMessageError(params string[] messages)
         {
-            _controller.ViewBag.InfoMessage = FormatMessage(message);
-        }
-
-        private IEnumerable<string> FormatMessages(IEnumerable<string> messages)
-        {
-            return messages != null && messages.Any()
-                ? messages.Select(FormatMessage).ToArray()
-                : null;
-        }
-
-        private string FormatMessage(string message)
-        {
-            return Formatter.Html(message);
+            ViewBagHelper.SetMessageError(_controller.ViewBag, messages);
         }
 
         public ActionResult CreateFileActionResult(string fileName, byte[] fileContent,

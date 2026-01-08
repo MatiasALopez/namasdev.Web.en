@@ -106,12 +106,15 @@
     <Compile Include="Helpers\SessionHelper.cs" />
     <Compile Include="Helpers\UrlBuilder.cs" />
     <Compile Include="Helpers\UserHelper.cs" />
+    <Compile Include="Helpers\ViewBagHelper.cs" />
+    <Compile Include="Helpers\WebViewPageExtensions.cs" />
     <Compile Include="ModelBinders\DateTimeModelBinder.cs" />
     <Compile Include="ModelBinders\DecimalModelBinder.cs" />
     <Compile Include="ModelBinders\DoubleModelBinder.cs" />
     <Compile Include="ModelBinders\IntegerModelBinder.cs" />
     <Compile Include="ModelBinders\LongModelBinder.cs" />
     <Compile Include="ModelBinders\ShortModelBinder.cs" />
+    <Compile Include="Models\AlertType.cs" />
     <Compile Include="Models\FileItemModel.cs" />
     <Compile Include="Models\BootstrapSelectResultData.cs" />
     <Compile Include="Models\DropDownListDependentModel.cs" />
