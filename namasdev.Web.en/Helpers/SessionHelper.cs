@@ -12,12 +12,12 @@ namespace namasdev.Web.Helpers
             _session = session;
         }
 
-        private bool GetBool(string key)
+        public bool GetBool(string key)
         {
             return bool.Equals(_session[key], true);
         }
 
-        private void SetBool(string key, bool value)
+        public void SetBool(string key, bool value)
         {
             if (value)
             {
@@ -29,12 +29,12 @@ namespace namasdev.Web.Helpers
             }
         }
 
-        private string GetString(string key)
+        public string GetString(string key)
         {
             return (string)_session[key];
         }
 
-        private void SetString(string key, string value)
+        public void SetString(string key, string value)
         {
             if (!String.IsNullOrWhiteSpace(value))
             {
